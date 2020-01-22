@@ -70,6 +70,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/emaveric/ft_printf/libft/ft_tolower.c" "/Users/emaveric/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/libft/ft_tolower.c.o"
   "/Users/emaveric/ft_printf/libft/ft_toupper.c" "/Users/emaveric/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/libft/ft_toupper.c.o"
   "/Users/emaveric/ft_printf/src/ft_printf.c" "/Users/emaveric/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/src/ft_printf.c.o"
+  "/Users/emaveric/ft_printf/src/modifiers.c" "/Users/emaveric/ft_printf/cmake-build-debug/CMakeFiles/ft_printf.dir/src/modifiers.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

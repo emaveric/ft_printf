@@ -199,3 +199,7 @@ CMakeFiles/ft_printf.dir/src/ft_printf.c.o: ../includes/ft_printf.h
 CMakeFiles/ft_printf.dir/src/ft_printf.c.o: ../libft/libft.h
 CMakeFiles/ft_printf.dir/src/ft_printf.c.o: ../src/ft_printf.c
 
+CMakeFiles/ft_printf.dir/src/modifiers.c.o: ../includes/ft_printf.h
+CMakeFiles/ft_printf.dir/src/modifiers.c.o: ../libft/libft.h
+CMakeFiles/ft_printf.dir/src/modifiers.c.o: ../src/modifiers.c
+

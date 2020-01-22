@@ -1905,6 +1905,33 @@ src/ft_printf.c.s:
 	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/src/ft_printf.c.s
 .PHONY : src/ft_printf.c.s
 
+src/modifiers.o: src/modifiers.c.o
+
+.PHONY : src/modifiers.o
+
+# target to build an object file
+src/modifiers.c.o:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/src/modifiers.c.o
+.PHONY : src/modifiers.c.o
+
+src/modifiers.i: src/modifiers.c.i
+
+.PHONY : src/modifiers.i
+
+# target to preprocess a source file
+src/modifiers.c.i:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/src/modifiers.c.i
+.PHONY : src/modifiers.c.i
+
+src/modifiers.s: src/modifiers.c.s
+
+.PHONY : src/modifiers.s
+
+# target to generate assembly for a file
+src/modifiers.c.s:
+	$(MAKE) -f CMakeFiles/ft_printf.dir/build.make CMakeFiles/ft_printf.dir/src/modifiers.c.s
+.PHONY : src/modifiers.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2112,6 +2139,9 @@ help:
 	@echo "... src/ft_printf.o"
 	@echo "... src/ft_printf.i"
 	@echo "... src/ft_printf.s"
+	@echo "... src/modifiers.o"
+	@echo "... src/modifiers.i"
+	@echo "... src/modifiers.s"
 .PHONY : help
 
 

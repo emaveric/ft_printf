@@ -79,4 +79,5 @@ add_executable(ft_printf
         author
         includes/ft_printf.h
         Makefile
-        src/ft_printf.c)
+        src/ft_printf.c
+        src/modifiers.c)

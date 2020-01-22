@@ -199,3 +199,7 @@ CMakeFiles/ft_printf.dir/src/ft_printf.c.o
  /Users/emaveric/ft_printf/includes/ft_printf.h
  /Users/emaveric/ft_printf/libft/libft.h
  /Users/emaveric/ft_printf/src/ft_printf.c
+CMakeFiles/ft_printf.dir/src/modifiers.c.o
+ /Users/emaveric/ft_printf/includes/ft_printf.h
+ /Users/emaveric/ft_printf/libft/libft.h
+ /Users/emaveric/ft_printf/src/modifiers.c

@@ -65,6 +65,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ft_printf.dir/libft/ft_numlen.c.o"
   "CMakeFiles/ft_printf.dir/libft/ft_num_to_str.c.o"
   "CMakeFiles/ft_printf.dir/src/ft_printf.c.o"
+  "CMakeFiles/ft_printf.dir/src/modifiers.c.o"
   "ft_printf.pdb"
   "ft_printf"
 )

@@ -6,13 +6,13 @@
 #    By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/16 19:37:05 by emaveric          #+#    #+#              #
-#    Updated: 2020/01/16 20:14:26 by emaveric         ###   ########.fr        #
+#    Updated: 2020/01/18 14:33:33 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-FILES = ft_printf.c
+FILES = ft_printf.c modifiers.c
 
 SRC = $(addprefix src/, $(FILES))
 

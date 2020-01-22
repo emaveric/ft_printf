@@ -304,6 +304,9 @@
 		<Unit filename="/Users/emaveric/ft_printf/src/ft_printf.c">
 			<Option target="ft_printf"/>
 		</Unit>
+		<Unit filename="/Users/emaveric/ft_printf/src/modifiers.c">
+			<Option target="ft_printf"/>
+		</Unit>
 		<Unit filename="/Users/emaveric/ft_printf/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
