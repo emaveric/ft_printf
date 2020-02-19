@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tamarant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/06 21:52:10 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/19 22:55:47 by emaveric         ###   ########.fr       */
+/*   Created: 2019/04/05 19:00:03 by tamarant          #+#    #+#             */
+/*   Updated: 2019/12/17 21:06:54 by tamarant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,22 @@
 
 char	*ft_strdup(const char *s1)
 {
-	int		i;
-	char	*s;
+	char	*cop;
+	int		len;
 
-	i = 0;
-	while (s1[i] != '\0')
-		i++;
-	s = (char *)malloc(sizeof(char) * (i + 1));
-	if (s == NULL)
-		return (0);
-	i = 0;
-	while (s1[i] != '\0')
+	len = 0;
+	if (!s1)
+		return (NULL);
+	while (s1[len] != '\0')
+		len++;
+	if (!(cop = (char*)malloc(sizeof(*s1) * (len + 1))))
+		return (NULL);
+	len = 0;
+	while (s1[len] != '\0')
 	{
-		s[i] = s1[i];
-		i++;
+		cop[len] = s1[len];
+		len++;
 	}
-	s[i] = '\0';
-	return (s);
+	cop[len] = '\0';
+	return (cop);
 }

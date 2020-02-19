@@ -3,82 +3,92 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 17:14:40 by emaveric          #+#    #+#             */
-/*   Updated: 2020/01/22 21:26:03 by emaveric         ###   ########.fr       */
+/*   Created: 2019/10/14 17:36:23 by tamarant          #+#    #+#             */
+/*   Updated: 2019/12/17 21:53:41 by tamarant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
-#include <stdio.h>
+#include "../inc/ft_printf.h"
 
-f_pr	*init(void)
+void	new_chars(t_pf *pf)
 {
-	f_pr	*new;
-	if (!(new = (f_pr *)malloc(sizeof(f_pr))))
+	pf->size = NULL;
+	pf->str = NULL;
+	pf->tmp_oxfs = NULL;
+	pf->sharp = NULL;
+}
+
+t_pf	*new_t_pf(void)
+{
+	t_pf *pf;
+
+	if (!(pf = (t_pf*)malloc(sizeof(t_pf))))
 		return (NULL);
-	new->modifier = NULL;
-	new->num.li = 0;
-	new->num.uli = 0;
-	return (new);
+	if (!(pf->flags = ft_memalloc(6)))
+		return (NULL);
+	pf->width = 0;
+	pf->precision = -1;
+	pf->type = '\0';
+	pf->str_len = 0;
+	pf->percent = 0;
+	pf->counter = 0;
+	pf->num.i = 0;
+	pf->symbol = -1;
+	pf->symb_width = 0;
+	pf->prec_width = 0;
+	pf->dot = 0;
+	pf->plus = 0;
+	pf->minus = 0;
+	pf->space = 0;
+	pf->float_dot = 0;
+	pf->buf_len = 0;
+	new_chars(pf);
+	return (pf);
 }
 
-void	to_int(va_list arg, f_pr *par)
+int		work_part(char *p, t_pf *pf, va_list ap)
 {
-	char 	*str;
-	int 	len;
-
-	//par->num = va_arg(arg, int);
-	if (par->modifier)
-		change_size(par, arg);
-	str = ft_num_to_str(va_arg(arg, int));
-	len = ft_numlen(va_arg(arg, int));
-	write(1, str, len - 1);
-}
-
-int 	ft_printf(const char *format, ...)
-{
-	int 	i;
-	f_pr	*par;
-	char 	*p;
-	va_list	factor;
-
-	i = 0;
-	p = (char *)format;
-	if (!(par = init()))
-		return (ERROR);
-	va_start(factor, format);
 	while (*p != '\0')
 	{
-		if (*p == '%')
+		if (*p == '%' && *(p + 1) != '%')
 		{
-			p = p + 1;
-			par = modifiers(&p, par);
-			/*if (par->modifier)
-				p = p + ft_strlen(par->modifier);*/
-			//flags(i, factor);
-			if (*p == 'd' || *p == 'i')
+			if (pf_format(pf, &p, ap) == -1)
 			{
-				to_int(factor, par);
-				p = p + 1;
+				free_t_pf(pf, 0);
+				va_end(ap);
+				return (0);
 			}
+			free_t_pf(pf, 1);
 		}
 		else
 		{
-			write(1, p, 1);
-			//i++;
-			p = p + 1;
+			pf->counter += new_str(pf, &p);
+			free_t_pf(pf, 1);
 		}
 	}
-	va_end(factor);
-	return (0);
+	return (1);
 }
 
-int 	main(void)
+int		ft_printf(const char *format, ...)
 {
-	ft_printf("hello alex, your age = %i and %ld", 19, 200);
-	printf("\n");
-	printf("hello alex, your age = %i and %d", 19, 200);
-	return (0);
+	va_list ap;
+	char	*p;
+	t_pf	*pf;
+	int		sum;
+
+	va_start(ap, format);
+	p = (char*)format;
+	if (!(pf = new_t_pf()))
+		return (0);
+	if (work_part(p, pf, ap) == 0)
+	{
+		va_end(ap);
+		return (0);
+	}
+	sum = pf->counter;
+	free_t_pf(pf, 0);
+	va_end(ap);
+	return (sum);
 }

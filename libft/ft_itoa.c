@@ -3,65 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 22:52:45 by emaveric          #+#    #+#             */
-/*   Updated: 2019/04/17 18:58:57 by emaveric         ###   ########.fr       */
+/*   Created: 2019/04/12 20:37:24 by tamarant          #+#    #+#             */
+/*   Updated: 2019/12/16 14:37:51 by tamarant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_num_len(int n)
+static int		ft_len_itoa(int n)
 {
 	int len;
 
-	len = 0;
-	if (n == 0)
-		len++;
-	while (n != 0)
+	len = 1;
+	while (n > 9)
 	{
+		n = n / 10;
 		len++;
-		n /= 10;
 	}
 	return (len);
 }
 
-static char		ft_int_to_ch(char *str, int n, int len)
+static char		ft_str_int(char *s, int n, int len, int neg)
 {
-	while (--len >= 0)
+	while (len--)
 	{
-		str[len] = (n % 10) + '0';
-		n /= 10;
+		s[len] = (n % 10) + 48;
+		n = n / 10;
 	}
-	return (*str);
+	if (neg)
+		s[0] = '-';
+	return ((char)s);
 }
 
 char			*ft_itoa(int n)
 {
 	int		len;
-	char	*str;
-	int		sign;
+	int		neg;
+	char	*res;
 
-	sign = 0;
-	len = 0;
-	if (n < 0)
+	neg = 0;
+	if (n > -2147483648 && n <= 2147483647)
 	{
-		sign = 1;
-		len++;
-		n *= -1;
+		if (n < 0)
+		{
+			neg = 1;
+			n *= -1;
+		}
+		len = ft_len_itoa(n) + neg;
+		if (!(res = ft_memalloc(len + 1)))
+			return (NULL);
+		ft_str_int(res, n, len, neg);
+		return (res);
 	}
-	len += ft_num_len(n);
-	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
-		return (0);
-	str[len] = '\0';
-	ft_int_to_ch(str, n, len);
-	if (n * sign == -2147483648)
-	{
-		ft_int_to_ch(str, n - 8, len);
-		str[len - 1] = '8';
-	}
-	if (sign == 1)
-		str[0] = '-';
-	return (str);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	return (NULL);
 }

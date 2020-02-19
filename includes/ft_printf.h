@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 17:14:58 by emaveric          #+#    #+#             */
-/*   Updated: 2020/01/22 20:43:36 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/01/28 15:55:16 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct	s_pr
 	int 			width;
 	union u_number	num;
 	char 			*modifier;
+	int 			flag;
+	char 			type;
 }				f_pr;
 
 void	flags(char *p, va_list factor);

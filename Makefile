@@ -3,47 +3,65 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+         #
+#    By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/01/16 19:37:05 by emaveric          #+#    #+#              #
-#    Updated: 2020/01/18 14:33:33 by emaveric         ###   ########.fr        #
+#    Created: 2019/12/17 18:16:44 by tamarant          #+#    #+#              #
+#    Updated: 2019/12/17 20:33:51 by tamarant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-FILES = ft_printf.c modifiers.c
+FILES = check.c \
+		fill_final.c \
+		find.c \
+		find_str_size.c \
+		float_maker.c \
+		float_new_free.c \
+		float_put.c \
+		floats.c \
+		ft_printf.c \
+		new_str.c \
+		other.c \
+		parse_format.c \
+		pf_format.c \
+		pf_free.c \
+		pf_lib.c \
+		print_check.c \
 
-SRC = $(addprefix src/, $(FILES))
+INC = inc/ft_printf.h
 
-INC = includes/ft_printf.h
+SRC = $(addprefix src/,$(FILES))
 
-OBJ = $(addprefix obj/, $(FILES:.c=.o))
+OBJ = $(addprefix obj/,$(FILES:.c=.o))
 
-LIBFT = libft/libft.a
+LIB = libft/libft.a
 
-FLAGS = -Wall -Wextra -Werror
+LIBFT_DIR = libft/
+
+FLAGS = -Wall -Wextra -Werror -g
 
 all: $(NAME)
 
-lib:
-	@make -C libft
+check_lib:
+	$(MAKE) -C $(LIBFT_DIR)
 
-$(NAME): $(OBJ) lib
-	gcc $(FLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+obj/%.o: src/%.c
+	@mkdir -p obj/
+	@gcc $(FLAGS) -I $(INC) -o $@ -c $<
 
-obj/%.o: src/%.c | obj
-	gcc -c -I./libft $< -o $@
+$(NAME): $(OBJ) check_lib
+	cp $(LIB) $(NAME)
+	ar rc $(NAME) $(OBJ)
 
 clean:
-	rm -rf $(OBJ)
-	make -C libft clean
-
-obj:
-	mkdir -p obj
+	$(MAKE) -C $(LIBFT_DIR) clean
+	rm -f $(OBJ)
+	rm -rf ./obj
 
 fclean: clean
-	/bin/rm -rf $(NAME) ./obj
-	make -C libft fclean
+	$(MAKE) -C $(LIBFT_DIR) fclean
+	rm -f $(NAME)
+	rm -rf ./obj
 
-re: fclean all
+re: fclean $(NAME)
