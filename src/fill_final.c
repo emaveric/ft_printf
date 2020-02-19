@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/ft_printf.h"
 
 static void		fill_with_arg(t_pf *pf, char *str, int *i, char *tmp)

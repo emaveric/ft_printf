@@ -37,7 +37,7 @@ void	find_flags(t_pf *pf, char **p)
 void	find_width(t_pf *pf, char **p)
 {
 	pf->width = ft_atoi(*p);
-	*p += number_len(pf->width);
+	*p += ft_numlen(pf->width);
 }
 
 void	find_precision(t_pf *pf, char **p)

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/ft_printf.h"
 
 void		put_if_precision_null(t_float *fl, t_pf *pf, LD num)

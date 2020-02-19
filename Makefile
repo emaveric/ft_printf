@@ -6,10 +6,9 @@
 #    By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/06 17:02:06 by emaveric          #+#    #+#              #
-#    Updated: 2020/02/19 17:02:06 by emaveric         ###   ########.fr        #
+#    Updated: 2020/02/19 17:05:34 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 NAME = libftprintf.a
 

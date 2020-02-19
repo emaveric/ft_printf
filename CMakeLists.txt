@@ -25,8 +25,6 @@ add_executable(maha
         libft/ft_isinf.c
         libft/ft_isnan.c
         libft/ft_isprint.c
-        libft/ft_iterative_factorial.c
-        libft/ft_iterative_power.c
         libft/ft_itoa.c
         libft/ft_lltoa.c
         libft/ft_llutoa.c
@@ -86,14 +84,12 @@ add_executable(maha
         libft/ft_tolower.c
         libft/ft_toupper.c
         libft/ft_ulltoa.c
-        libft/get_next_line.c
         libft/itoa_base.c
         libft/libft.h
-        libft/number_len.c
         libft/number_len_ll.c
         libft/number_len_ull.c
-        libft/to_uppercase.c
         libft/ulltoa_base.c
+        libft/ulltoa_base copy.c
         src/check.c
         src/fill_final.c
         src/find.c
@@ -112,4 +108,4 @@ add_executable(maha
         src/print_check.c
         author
         Makefile
-        README.md)
+        README.md libft/to_uppercase.c)

@@ -6,16 +6,21 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 22:50:49 by emaveric          #+#    #+#             */
-/*   Updated: 2020/02/19 17:06:49 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/02/19 17:59:21 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define ULL unsigned long long
+# define LD long double
+# define UI unsigned int
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
+# include <string.h>
+# include <limits.h>
+# include <fcntl.h>
 
 typedef struct	s_list
 {
@@ -90,5 +95,18 @@ int				ft_recursive_factorial(int nb);
 int				ft_is_whitespaces(char c);
 int				ft_numlen(int num);
 char			*ft_num_to_str(int num);
+char			*ulltoa_base(unsigned long long int value,
+				int base);
+int				ft_isnan(long double num);
+int				number_len_ll(long long n);
+int				ft_isinf(long double num);
+char			*ft_lltoa(long long int n);
+void			ft_putnbr_max(long long int nb);
+int				number_len_ull(unsigned long long n);
+char			*to_uppercase(char *str);
+ULL				ft_pow(ULL n, ULL pow);
+char			*ft_ulltoa(unsigned long long int n);
+int				ft_is_minus_inf(long double num);
+LD				ft_pow_double(LD n, ULL pow);
 
 #endif

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/ft_printf.h"
 
 char		*add_null(t_pf *pf, t_float *fl, int what)

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/ft_printf.h"
 
 static void		size_lh(t_pf *pf, char p, va_list ap, int n)
