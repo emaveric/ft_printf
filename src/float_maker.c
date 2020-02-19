@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   float_maker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/17 18:31:50 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/17 20:52:02 by tamarant         ###   ########.fr       */
+/*   Created: 2020/01/27 16:52:42 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 16:52:42 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+
+#include "../includes/ft_printf.h"
 
 char		*add_null(t_pf *pf, t_float *fl, int what)
 {

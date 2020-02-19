@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   fill_final.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/16 20:18:07 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/17 19:43:53 by tamarant         ###   ########.fr       */
+/*   Created: 2020/02/06 16:53:09 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 16:53:09 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+
+#include "../includes/ft_printf.h"
 
 static void		fill_with_arg(t_pf *pf, char *str, int *i, char *tmp)
 {

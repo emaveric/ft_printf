@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   new_str.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 17:26:18 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/17 18:12:54 by tamarant         ###   ########.fr       */
+/*   Created: 2020/01/13 16:11:09 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 16:12:33 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	fill_str_buff(t_pf *pf, char **p)
 {

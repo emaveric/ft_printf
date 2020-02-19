@@ -6,5 +6,5 @@ C_FLAGS = -g
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/emaveric/maha/. -I/Users/emaveric/maha/inc -I/Users/emaveric/maha/libft -I/Users/emaveric/maha/src 
+C_INCLUDES = -I/Users/emaveric/ft_printf/. -I/Users/emaveric/ft_printf/inc -I/Users/emaveric/ft_printf/libft -I/Users/emaveric/ft_printf/src 
 

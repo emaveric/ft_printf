@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   other.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/17 16:24:55 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/17 19:43:53 by tamarant         ###   ########.fr       */
+/*   Created: 2020/02/04 16:13:05 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 16:13:05 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../includes/ft_printf.h"
 
 char	*find_tmp(t_pf *pf)
 {

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   pf_format.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 17:53:59 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/17 21:51:15 by tamarant         ###   ########.fr       */
+/*   Created: 2020/01/12 16:24:43 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 16:24:43 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+
+#include "../includes/ft_printf.h"
 
 static void		size_lh(t_pf *pf, char p, va_list ap, int n)
 {

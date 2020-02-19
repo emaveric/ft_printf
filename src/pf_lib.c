@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   pf_lib.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/17 17:27:52 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/17 19:20:21 by tamarant         ###   ########.fr       */
+/*   Created: 2020/01/15 16:38:57 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 16:38:57 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+
+#include "../includes/ft_printf.h"
 
 unsigned long long		ft_len_of_number(unsigned long long n)
 {

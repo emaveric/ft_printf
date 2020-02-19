@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 17:40:11 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/17 18:30:50 by tamarant         ###   ########.fr       */
+/*   Created: 2020/01/08 16:53:29 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 16:53:29 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+
+#include "../includes/ft_printf.h"
 
 int		is_flags(char *p)
 {

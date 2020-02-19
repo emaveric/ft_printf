@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   pf_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/16 21:17:19 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/17 21:53:27 by tamarant         ###   ########.fr       */
+/*   Created: 2020/02/04 16:37:22 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 16:37:22 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+
+#include "../includes/ft_printf.h"
 
 void	dop_free_end(t_pf *pf, int n)
 {

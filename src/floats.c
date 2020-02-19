@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   floats.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/17 17:44:26 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/17 18:45:31 by tamarant         ###   ########.fr       */
+/*   Created: 2020/01/26 16:39:39 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 16:39:39 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+
+#include "../includes/ft_printf.h"
 
 char		*get_integer(LD num, t_float *fl)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/11 21:28:58 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/16 14:37:51 by tamarant         ###   ########.fr       */
+/*   Created: 2019/04/12 22:15:01 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 17:06:49 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,25 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len;
 	size_t	i;
 	size_t	j;
-	char	*res;
+	char	*str;
 
-	i = 0;
-	j = 0;
-	len = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	if (!(res = ft_strnew(len)))
-		return (NULL);
-	while (i < len)
+	i = -1;
+	j = -1;
+	if (s1 != NULL && s2 != NULL)
 	{
-		while (s1[i] != '\0')
-		{
-			res[i] = s1[i];
-			i++;
-		}
-		while (s2[j] != '\0')
-			res[i++] = s2[j++];
+		str = (char *)malloc(sizeof(char) *
+			(ft_strlen(s1) + ft_strlen(s2) + 1));
+		if (str == NULL)
+			return (0);
+		while (s1[++i] != '\0')
+			str[i] = s1[i];
+		while (s2[++j] != '\0')
+			str[i++] = s2[j];
+		str[i] = '\0';
+		return (str);
 	}
-	res[i] = '\0';
-	return (res);
+	else
+		return (0);
 }

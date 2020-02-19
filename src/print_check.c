@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   print_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/16 21:24:24 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/17 18:12:54 by tamarant         ###   ########.fr       */
+/*   Created: 2020/01/15 16:39:21 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 16:39:21 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+
+#include "../includes/ft_printf.h"
 
 void			print_res(char *str, int len, int n)
 {

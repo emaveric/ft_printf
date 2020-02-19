@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parse_format.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/06 17:33:00 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/17 21:30:13 by tamarant         ###   ########.fr       */
+/*   Created: 2020/01/12 16:15:00 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 16:15:00 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../includes/ft_printf.h"
 
 static void		find_sign(t_pf *pf)
 {

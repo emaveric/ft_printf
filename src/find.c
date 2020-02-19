@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   find.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 18:09:48 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/16 21:11:49 by tamarant         ###   ########.fr       */
+/*   Created: 2020/01/09 17:01:09 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/19 17:01:09 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	find_flags(t_pf *pf, char **p)
 {

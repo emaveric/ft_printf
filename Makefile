@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+         #
+#    By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/12/17 18:16:44 by tamarant          #+#    #+#              #
-#    Updated: 2019/12/17 20:33:51 by tamarant         ###   ########.fr        #
+#    Created: 2020/02/06 17:02:06 by emaveric          #+#    #+#              #
+#    Updated: 2020/02/19 17:02:06 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = libftprintf.a
 
