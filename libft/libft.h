@@ -6,7 +6,7 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 22:50:49 by emaveric          #+#    #+#             */
-/*   Updated: 2020/02/22 13:49:17 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/02/28 21:43:56 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,6 @@ unsigned long long	ft_pow(unsigned long long n, unsigned long long pow);
 char				*ft_ulltoa(unsigned long long int n);
 int					ft_is_minus_inf(long double num);
 long double			ft_pow_double(long double n, unsigned long long pow);
+//int					ft_atoi_base(const char *str);
 
 #endif

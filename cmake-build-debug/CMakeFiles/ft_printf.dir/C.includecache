@@ -6,9 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/Users/emaveric/ft_printf/libft/ft_strdup.c
-libft.h
+/Users/emaveric/ft_printf/includes/ft_printf.h
+stdio.h
+-
+stdarg.h
+-
+../libft/libft.h
 /Users/emaveric/ft_printf/libft/libft.h
+limits.h
+-
+math.h
+-
 
 /Users/emaveric/ft_printf/libft/libft.h
 stdlib.h
@@ -21,4 +29,8 @@ limits.h
 -
 fcntl.h
 -
+
+/Users/emaveric/ft_printf/src/ft_printf.c
+../includes/ft_printf.h
+/Users/emaveric/ft_printf/includes/ft_printf.h
 

@@ -6,7 +6,7 @@
 #    By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/06 17:02:06 by emaveric          #+#    #+#              #
-#    Updated: 2020/02/28 21:08:25 by emaveric         ###   ########.fr        #
+#    Updated: 2020/02/28 21:34:18 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,8 +59,8 @@ clean:
 	rm -rf ./obj
 
 fclean: clean
-	/bin/rm -rf $(NAME) ./obj
 	make -C libft fclean
+	/bin/rm -rf $(NAME)
 	rm -rf ./obj
 
 re: fclean all

@@ -6,7 +6,7 @@
 #    By: emaveric <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 19:36:08 by emaveric          #+#    #+#              #
-#    Updated: 2020/02/28 21:07:52 by emaveric         ###   ########.fr        #
+#    Updated: 2020/02/28 21:42:16 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,24 +27,9 @@ SRC = ft_atoi.c ft_bzero.c ft_div_mod.c ft_is_whitespaces.c ft_isalnum.c \
 	  ft_strtrim.c ft_swap.c ft_tolower.c ft_toupper.c ft_num_to_str.c \
 	  ft_numlen.c ft_num_to_str.c ulltoa_base.c ft_isnan.c number_len_ll.c \
 	  ft_isinf.c ft_lltoa.c ft_putnbr_max.c number_len_ull.c to_uppercase.c \
-	  ft_pow.c ft_ulltoa.c ft_is_minus_inf.c ft_pow_double.c
+	  ft_pow.c ft_ulltoa.c ft_is_minus_inf.c ft_pow_double.c ft_atoi_base.c \
 
-OBJ = ft_atoi.o ft_lstiter.o ft_putendl.o ft_strdel.o ft_strnequ.o \
-	  ft_bzero.o ft_lstmap.o ft_putendl_fd.o ft_strdup.o ft_strnew.o \
-	  ft_div_mod.o ft_lstnew.o ft_putnbr.o ft_strequ.o ft_strnstr.o \
-	  ft_is_whitespaces.o  ft_memalloc.o   ft_putnbr_fd.o   ft_striter.o \
-	  ft_strrchr.o ft_isalnum.o ft_memccpy.o ft_putstr.o ft_striteri.o \
-	  ft_strsplit.o ft_isalpha.o ft_memchr.o ft_putstr_fd.o ft_strjoin.o \
-	  ft_strstr.o ft_isascii.o ft_memcmp.o ft_recursive_factorial.o \
-	  ft_strlcat.o ft_strsub.o ft_isdigit.o ft_memcpy.o ft_sqrt.o \
-	  ft_strlen.o ft_strtrim.o ft_isprint.o ft_memdel.o ft_strcat.o \
-	  ft_strmap.o ft_swap.o ft_itoa.o ft_memmove.o ft_strchr.o \
-	  ft_strmapi.o ft_tolower.o ft_lstadd.o ft_memset.o ft_strclr.o \
-	  ft_strncat.o ft_toupper.o ft_lstdel.o ft_putchar.o ft_strcmp.o \
-	  ft_strncmp.o ft_lstdelone.o ft_putchar_fd.o ft_strcpy.o ft_strncpy.o \
-	  ft_num_to_str.o ft_numlen.o ft_num_to_str.o ulltoa_base.o ft_isnan.o \
-	  number_len_ll.o ft_isinf.o ft_lltoa.o ft_putnbr_max.o number_len_ull.o \
-	  to_uppercase.o ft_pow.o ft_ulltoa.o ft_is_minus_inf.o ft_pow_double.o
+OBJ = $(SRC:.c=.o)
 
 HEAD = -I libft.h
 
