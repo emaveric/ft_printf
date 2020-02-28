@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-LD		ft_pow_double(LD n, ULL pow)
+long double		ft_pow_double(long double n, unsigned long long pow)
 {
 	return (pow ? n * ft_pow_double(n, pow - 1) : 1);
 }

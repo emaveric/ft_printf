@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/emaveric/ft_printf/libft/ft_strdup.c
+libft.h
+/Users/emaveric/ft_printf/libft/libft.h
+
+/Users/emaveric/ft_printf/libft/libft.h
+stdlib.h
+-
+unistd.h
+-
+string.h
+-
+limits.h
+-
+fcntl.h
+-
+

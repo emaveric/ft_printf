@@ -6,13 +6,13 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 16:10:21 by emaveric          #+#    #+#             */
-/*   Updated: 2020/02/19 16:10:21 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/02/28 20:26:36 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	new_chars(t_pf *pf)
+void	init_chars(t_pf *pf)
 {
 	pf->size = NULL;
 	pf->str = NULL;
@@ -20,7 +20,7 @@ void	new_chars(t_pf *pf)
 	pf->sharp = NULL;
 }
 
-t_pf	*new_t_pf(void)
+t_pf	*init(void)
 {
 	t_pf *pf;
 
@@ -31,20 +31,20 @@ t_pf	*new_t_pf(void)
 	pf->width = 0;
 	pf->precision = -1;
 	pf->type = '\0';
-	pf->str_len = 0;
-	pf->percent = 0;
-	pf->counter = 0;
-	pf->num.i = 0;
 	pf->symbol = -1;
 	pf->symb_width = 0;
 	pf->prec_width = 0;
 	pf->dot = 0;
+	pf->str_len = 0;
+	pf->percent = 0;
+	pf->counter = 0;
+	pf->num.i = 0;
 	pf->plus = 0;
 	pf->minus = 0;
 	pf->space = 0;
 	pf->float_dot = 0;
 	pf->buf_len = 0;
-	new_chars(pf);
+	init_chars(pf);
 	return (pf);
 }
 
@@ -80,7 +80,7 @@ int		ft_printf(const char *format, ...)
 
 	va_start(ap, format);
 	p = (char*)format;
-	if (!(pf = new_t_pf()))
+	if (!(pf = init()))
 		return (0);
 	if (work_part(p, pf, ap) == 0)
 	{
@@ -92,3 +92,11 @@ int		ft_printf(const char *format, ...)
 	va_end(ap);
 	return (sum);
 }
+
+/*int 	main(void)
+{
+	ft_printf("%10.s\"", NULL);
+	printf("\n");
+	printf("%10.s\"", NULL);
+	return (0);
+}*/

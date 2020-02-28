@@ -6,62 +6,61 @@
 #    By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/06 17:02:06 by emaveric          #+#    #+#              #
-#    Updated: 2020/02/19 17:05:34 by emaveric         ###   ########.fr        #
+#    Updated: 2020/02/28 20:45:34 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-FILES = check.c \
+FILES = check_is.c \
 		fill_final.c \
-		find.c \
+		find_mod.c \
 		find_str_size.c \
 		float_maker.c \
 		float_new_free.c \
 		float_put.c \
 		floats.c \
 		ft_printf.c \
-		new_str.c \
-		other.c \
+		fill_new_str.c \
+		fill_find_other.c \
 		parse_format.c \
 		pf_format.c \
 		pf_free.c \
-		pf_lib.c \
+		pf_libft.c \
 		print_check.c \
 
-INC = inc/ft_printf.h
+SRC = $(addprefix src/, $(FILES))
 
-SRC = $(addprefix src/,$(FILES))
+INC = includes/ft_printf.h
 
-OBJ = $(addprefix obj/,$(FILES:.c=.o))
+OBJ = $(addprefix obj/, $(FILES:.c=.o))
 
-LIB = libft/libft.a
+LIBFT = libft/libft.a
 
-LIBFT_DIR = libft/
-
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror -Weverything
 
 all: $(NAME)
 
-check_lib:
-	$(MAKE) -C $(LIBFT_DIR)
+lib:
+	@make -C libft
 
-obj/%.o: src/%.c
-	@mkdir -p obj/
-	@gcc $(FLAGS) -I $(INC) -o $@ -c $<
+obj:
+	mkdir -p obj
 
-$(NAME): $(OBJ) check_lib
-	cp $(LIB) $(NAME)
+obj/%.o: src/%.c | obj
+	gcc -c $(FLAGS) -I $(INC) $< -o $@
+
+$(NAME): $(OBJ) lib
+	cp $(LIBFT) $(NAME)
 	ar rc $(NAME) $(OBJ)
 
 clean:
-	$(MAKE) -C $(LIBFT_DIR) clean
-	rm -f $(OBJ)
-	rm -rf ./obj
+    $(MAKE) -C $(LIBFT_DIR) clean
+	rm -rf $(OBJ)
+	make -C libft clean
 
 fclean: clean
-	$(MAKE) -C $(LIBFT_DIR) fclean
-	rm -f $(NAME)
-	rm -rf ./obj
+	/bin/rm -rf $(NAME) ./obj
+	make -C libft fclean
 
-re: fclean $(NAME)
+re: fclean all

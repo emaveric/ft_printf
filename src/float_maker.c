@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 16:52:42 by emaveric          #+#    #+#             */
-/*   Updated: 2020/02/19 16:52:42 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/02/22 13:46:21 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char		*add_null(t_pf *pf, t_float *fl, int what)
 {
-	UI i;
+	unsigned long long i;
 
 	i = 0;
 	if (what == 1)
 		while (*(fl->scnd + i) != '\0')
 			i++;
-	while (i < (UI)pf->precision)
+	while (i < (unsigned long long)pf->precision)
 	{
 		*(fl->scnd + i) = 48;
 		i += 1;
@@ -29,22 +29,23 @@ char		*add_null(t_pf *pf, t_float *fl, int what)
 	return (fl->scnd);
 }
 
-char		*okrugl(LD num, ULL i, t_float *fl, int prec)
+char		*rounding(long double num, unsigned long long i,
+										t_float *fl, int prec)
 {
 	int precsn;
 
 	precsn = prec;
-	if ((num) < 0.1 && num != 0 && i < (ULL)prec)
+	if ((num) < 0.1 && num != 0 && i < (unsigned long long)prec)
 	{
 		*((fl->scnd) + i) = '0';
 		i += 1;
-		okrugl(num * 10 + ft_pow_double(0.1, precsn), i,
+		rounding(num * 10 + ft_pow_double(0.1, precsn), i,
 			fl, prec--);
 	}
 	return (fl->scnd);
 }
 
-void		fill_char_from_int(ULL what, char *where)
+void		fill_char_from_int(unsigned long long what, char *where)
 {
 	int i;
 
@@ -77,7 +78,7 @@ char		*make_decimal(t_float *fl, t_pf *pf)
 	return (fl->scnd);
 }
 
-void		real_okrugl(t_float *fl, t_pf *pf, LD num)
+void		real_rounding(t_float *fl, t_pf *pf, long double num)
 {
 	fl->flag = 0;
 	if (pf->precision == 0)

@@ -6,7 +6,7 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/06 21:52:10 by emaveric          #+#    #+#             */
-/*   Updated: 2020/02/19 17:06:49 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/02/28 19:41:09 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *s1)
 	char	*s;
 
 	i = 0;
+	if (!s1)
+		return (NULL);
 	while (s1[i] != '\0')
 		i++;
 	s = (char *)malloc(sizeof(char) * (i + 1));

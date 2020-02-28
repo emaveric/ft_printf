@@ -39,7 +39,7 @@ void		free_t_float(t_float *fl)
 	free(fl);
 }
 
-t_float		*new_t_float(void)
+t_float		*init_t_float(void)
 {
 	t_float *fl;
 
@@ -58,7 +58,7 @@ t_float		*new_t_float(void)
 	return (fl);
 }
 
-char		*videl_memory_for_decimal(t_pf *pf, t_float *fl)
+char		*init_memory_for_decimal(t_pf *pf, t_float *fl)
 {
 	if (pf->precision > 0)
 	{

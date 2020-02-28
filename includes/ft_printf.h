@@ -6,16 +6,13 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 15:55:05 by emaveric          #+#    #+#             */
-/*   Updated: 2020/02/19 16:08:39 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/02/25 15:50:15 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# define ULL unsigned long long
-# define LD long double
-# define UI unsigned int
 # define BU_SIZE 60
 
 # define RED "\x1B[31m"
@@ -50,12 +47,12 @@ typedef struct			s_float
 {
 	unsigned long long	first;
 	unsigned long long	second;
-	char				*scnd;
-	char				*frst;
 	unsigned long long	i;
 	unsigned long long	pos;
 	char				*tmp;
 	char				*res;
+	char				*scnd;
+	char				*frst;
 	int					not_f;
 	int					flag;
 }						t_float;
@@ -85,13 +82,13 @@ typedef struct			s_pf
 	int					symbol;
 	int					symb_width;
 	char				*sharp;
+	int					plus;
+	int					minus;
+	int					space;
 	char				*tmp_oxfs;
 	int					num_len;
 	union u_number		num;
 	int					dot;
-	int					plus;
-	int					minus;
-	int					space;
 	int					float_dot;
 	char				buff[BU_SIZE];
 	int					buf_len;
@@ -110,7 +107,6 @@ int						is_size(char *p);
 void					find_size(t_pf *pf, char **p);
 int						parse_format(t_pf *pf);
 int						find_str_size(t_pf *pf);
-void					print_res(char *str, int len, int n);
 void					fill_str_buff(t_pf *pf, char **p);
 void					fill_str_str(t_pf *pf, char **p);
 void					check_buf(t_pf *pf, char **p);
@@ -120,28 +116,21 @@ int						display_f(t_pf *pf);
 char					*pf_itoa(unsigned long long n);
 unsigned long long		ft_len_of_number(unsigned long long n);
 char					*pf_strcpy(char *dst, const char *src, int j);
-long double				ft_pow_double(long double n, unsigned long long pow);
-int						handle_inf_nan(LD num, t_pf *pf, t_float *fl);
 char					*add_null(t_pf *pf, t_float *fl, int what);
-void					real_okrugl(t_float *fl, t_pf *pf, LD num);
-char					*okrugl(LD num, ULL i, t_float *fl, int prec);
+void					real_rounding(t_float *fl, t_pf *pf, long double num);
+char					*rounding(long double num, unsigned long long i,
+													t_float *fl, int prec);
 void					free_t_float(t_float *fl);
-int						work_with_parts(t_float *fl, LD num, t_pf *pf);
-void					put_if_precision_null(t_float *fl, t_pf *pf, LD num);
-void					put_if_precision_not_null(t_float *fl,
-													t_pf *pf, LD num);
 char					*make_decimal(t_float *fl, t_pf *pf);
-void					fill_char_from_int(ULL what, char *where);
-char					*videl_memory_for_decimal(t_pf *pf, t_float *fl);
-void					float_string_helper(t_float *fl, t_pf *pf, LD num);
-char					*get_integer(LD num, t_float *fl);
-char					*get_decimal(LD num, t_pf *pf, t_float *fl);
-char					*put_in_str(t_pf *pf, t_float *fl, LD num);
-t_float					*new_t_float(void);
+void					fill_char_from_int(unsigned long long what,
+															char *where);
+char					*init_memory_for_decimal(t_pf *pf, t_float *fl);
+void					float_string_helper(t_float *fl, t_pf *pf,
+															long double num);
+char					*put_in_str(t_pf *pf, t_float *fl, long double num);
+t_float					*init_t_float(void);
 void					free_t_pf(t_pf *pf, int n);
 void					free_chars(t_pf *pf);
-void					dop_free_end(t_pf *pf, int n);
-char					*find_tmp(t_pf *pf);
 void					fill_with_symb(char *str, int *i, char c, int len);
 void					fill_with_sharp(t_pf *pf, char *str, int *i);
 

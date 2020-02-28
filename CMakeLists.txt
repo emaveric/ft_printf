@@ -1,23 +1,22 @@
 cmake_minimum_required(VERSION 3.14)
-project(maha)
+project(ft_printf C)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_C_STANDARD 11)
 
-include_directories(.)
-include_directories(inc)
+include_directories(includes)
 include_directories(libft)
-include_directories(src)
 
-add_executable(maha
-        inc/ft_printf.h
-        libft/author
+add_executable(ft_printf
+        includes/ft_printf.h
         libft/ft_atoi.c
         libft/ft_atoi_base.c
         libft/ft_bzero.c
         libft/ft_clear_table.c
         libft/ft_countwords.c
+        libft/ft_div_mod.c
         libft/ft_free.c
         libft/ft_is_minus_inf.c
+        libft/ft_is_whitespaces.c
         libft/ft_isalnum.c
         libft/ft_isalpha.c
         libft/ft_isascii.c
@@ -42,6 +41,8 @@ add_executable(maha
         libft/ft_memdel.c
         libft/ft_memmove.c
         libft/ft_memset.c
+        libft/ft_num_to_str.c
+        libft/ft_numlen.c
         libft/ft_pow.c
         libft/ft_pow_double.c
         libft/ft_putchar.c
@@ -53,12 +54,15 @@ add_executable(maha
         libft/ft_putnbr_max.c
         libft/ft_putstr.c
         libft/ft_putstr_fd.c
+        libft/ft_recursive_factorial.c
         libft/ft_sqrt.c
         libft/ft_strcat.c
         libft/ft_strchr.c
         libft/ft_strclr.c
         libft/ft_strcmp.c
+        libft/ft_strcmp_free.c
         libft/ft_strcpy.c
+        libft/ft_strcut.c
         libft/ft_strdel.c
         libft/ft_strdup.c
         libft/ft_strequ.c
@@ -73,6 +77,7 @@ add_executable(maha
         libft/ft_strncat.c
         libft/ft_strncmp.c
         libft/ft_strncpy.c
+        libft/ft_strncut.c
         libft/ft_strnequ.c
         libft/ft_strnew.c
         libft/ft_strnstr.c
@@ -81,6 +86,7 @@ add_executable(maha
         libft/ft_strstr.c
         libft/ft_strsub.c
         libft/ft_strtrim.c
+        libft/ft_swap.c
         libft/ft_tolower.c
         libft/ft_toupper.c
         libft/ft_ulltoa.c
@@ -88,24 +94,21 @@ add_executable(maha
         libft/libft.h
         libft/number_len_ll.c
         libft/number_len_ull.c
+        libft/to_uppercase.c
         libft/ulltoa_base.c
-        libft/ulltoa_base copy.c
-        src/check.c
+        src/check_is.c
         src/fill_final.c
-        src/find.c
+        src/fill_find_other.c
+        src/fill_new_str.c
+        src/find_mod.c
         src/find_str_size.c
         src/float_maker.c
         src/float_new_free.c
         src/float_put.c
         src/floats.c
         src/ft_printf.c
-        src/new_str.c
-        src/other.c
         src/parse_format.c
         src/pf_format.c
         src/pf_free.c
-        src/pf_lib.c
-        src/print_check.c
-        author
-        Makefile
-        README.md libft/to_uppercase.c)
+        src/pf_libft.c
+        src/print_check.c)

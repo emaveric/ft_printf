@@ -6,30 +6,30 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/26 16:39:39 by emaveric          #+#    #+#             */
-/*   Updated: 2020/02/19 16:39:39 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/02/25 15:15:26 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char		*get_integer(LD num, t_float *fl)
+char		*get_integer(long double num, t_float *fl)
 {
-	fl->first = (ULL)num;
+	fl->first = (unsigned long long)num;
 	if (!(fl->frst = pf_itoa(fl->first)))
 		return (NULL);
 	return (fl->frst);
 }
 
-char		*get_decimal(LD num, t_pf *pf, t_float *fl)
+char		*get_decimal(long double num, t_pf *pf, t_float *fl)
 {
-	if (!(fl->scnd = videl_memory_for_decimal(pf, fl)))
+	if (!(fl->scnd = init_memory_for_decimal(pf, fl)))
 		return (NULL);
-	((pf->precision == 19) ? (fl->second = (ULL)((num - fl->first) *
-			ft_pow(10, pf->precision))) :
-			(fl->second = (ULL)((num - fl->first) *
+	((pf->precision == 19) ? (fl->second = (unsigned long long)
+			((num - fl->first) * ft_pow(10, pf->precision))) :
+			(fl->second = (unsigned long long)((num - fl->first) *
 					ft_pow(10, pf->precision + 1))));
 	if ((num - fl->first < 0.1) && pf->precision > 1)
-		fl->scnd = okrugl((LD)(num - fl->first +
+		fl->scnd = rounding((long double)(num - fl->first +
 				ft_pow_double(0.1, pf->precision)), fl->i,
 						fl, pf->precision - 1);
 	if (pf->precision + 1 == 1)
@@ -42,7 +42,7 @@ char		*get_decimal(LD num, t_pf *pf, t_float *fl)
 	return (fl->scnd);
 }
 
-int			work_with_parts(t_float *fl, LD num, t_pf *pf)
+int			work_with_parts(t_float *fl, long double num, t_pf *pf)
 {
 	if (fl->not_f == 0)
 	{
@@ -65,7 +65,7 @@ int			work_with_parts(t_float *fl, LD num, t_pf *pf)
 	return (0);
 }
 
-int			handle_inf_nan(LD num, t_pf *pf, t_float *fl)
+int			handle_inf_nan(long double num, t_pf *pf, t_float *fl)
 {
 	if ((1.0 / 0.0) == num)
 	{
@@ -93,11 +93,11 @@ int			handle_inf_nan(LD num, t_pf *pf, t_float *fl)
 
 int			display_f(t_pf *pf)
 {
-	LD			num;
+	long double	num;
 	t_float		*fl;
 
 	num = pf->num.ld;
-	if (!(fl = new_t_float()))
+	if (!(fl = init_t_float()))
 		return (0);
 	fl->not_f = handle_inf_nan(num, pf, fl);
 	if (fl->not_f == 0)

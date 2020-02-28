@@ -12,9 +12,9 @@
 
 #include "../includes/ft_printf.h"
 
-void		put_if_precision_null(t_float *fl, t_pf *pf, LD num)
+void		put_if_precision_null(t_float *fl, t_pf *pf, long double num)
 {
-	real_okrugl(fl, pf, num);
+	real_rounding(fl, pf, num);
 	fl->pos = 0;
 	while (*(fl->frst + fl->pos) != '\0')
 	{
@@ -23,9 +23,9 @@ void		put_if_precision_null(t_float *fl, t_pf *pf, LD num)
 	}
 }
 
-void		put_if_precision_not_null(t_float *fl, t_pf *pf, LD num)
+void		put_if_precision_not_null(t_float *fl, t_pf *pf, long double num)
 {
-	real_okrugl(fl, pf, num);
+	real_rounding(fl, pf, num);
 	fl->pos = 0;
 	while (*(fl->frst + fl->pos) != '\0')
 	{
@@ -42,7 +42,7 @@ void		put_if_precision_not_null(t_float *fl, t_pf *pf, LD num)
 	}
 }
 
-char		*put_in_str(t_pf *pf, t_float *fl, LD num)
+char		*put_in_str(t_pf *pf, t_float *fl, long double num)
 {
 	if (!(fl->res = ft_memalloc((ft_strlen(fl->frst))
 			+ ((pf->precision == 0) ? 0 : (ft_strlen(fl->scnd) + 1))

@@ -6,7 +6,7 @@
 #    By: emaveric <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 19:36:08 by emaveric          #+#    #+#              #
-#    Updated: 2020/02/19 17:06:49 by emaveric         ###   ########.fr        #
+#    Updated: 2020/02/28 20:48:32 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ SRC = ft_atoi.c ft_bzero.c ft_div_mod.c ft_is_whitespaces.c ft_isalnum.c \
 	  ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c \
 	  ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c \
 	  ft_strtrim.c ft_swap.c ft_tolower.c ft_toupper.c ft_num_to_str.c \
-	  ft_numlen.c
+	  ft_numlen.c ft_num_to_str.c ulltoa_base.c ft_isnan.c number_len_ll.c \
+	  ft_isinf.c ft_lltoa.c ft_putnbr_max.c number_len_ull.c to_uppercase.c \
+	  ft_pow.c ft_ulltoa.c ft_is_minus_inf.c ft_pow_double.c
 
 OBJ = ft_atoi.o ft_lstiter.o ft_putendl.o ft_strdel.o ft_strnequ.o \
 	  ft_bzero.o ft_lstmap.o ft_putendl_fd.o ft_strdup.o ft_strnew.o \
@@ -40,7 +42,9 @@ OBJ = ft_atoi.o ft_lstiter.o ft_putendl.o ft_strdel.o ft_strnequ.o \
 	  ft_strmapi.o ft_tolower.o ft_lstadd.o ft_memset.o ft_strclr.o \
 	  ft_strncat.o ft_toupper.o ft_lstdel.o ft_putchar.o ft_strcmp.o \
 	  ft_strncmp.o ft_lstdelone.o ft_putchar_fd.o ft_strcpy.o ft_strncpy.o \
-	  ft_num_to_str.o ft_numlen.o
+	  ft_num_to_str.o ft_numlen.o ft_num_to_str.o ulltoa_base.o ft_isnan.o \
+	  number_len_ll.o ft_isinf.o ft_lltoa.o ft_putnbr_max.o number_len_ull.o \
+	  to_uppercase.o ft_pow.o ft_ulltoa.o ft_is_minus_inf.o ft_pow_double.o
 
 HEAD = -I libft.h
 
