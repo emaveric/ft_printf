@@ -6,7 +6,7 @@
 /*   By: emaveric <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 22:50:49 by emaveric          #+#    #+#             */
-/*   Updated: 2020/02/28 21:43:56 by emaveric         ###   ########.fr       */
+/*   Updated: 2020/03/02 16:08:44 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,15 @@ unsigned long long	ft_pow(unsigned long long n, unsigned long long pow);
 char				*ft_ulltoa(unsigned long long int n);
 int					ft_is_minus_inf(long double num);
 long double			ft_pow_double(long double n, unsigned long long pow);
-//int					ft_atoi_base(const char *str);
+int					ft_atoi_base(const char *str);
+void				*ft_clear_table(char **tables, int i);
+int					ft_countwords(char const *str, char c);
+char				*ft_llutoa(unsigned long long int n);
+int					ft_strcmp_free(char *s1, char *s2, int opt);
+char				*ft_strcut(const char *s, int c);
+char				*ft_strjoin_free(char *s1, char *s2, int opt);
+char				*ft_strncut(char *s, int start, int end);
+char				*itoa_base(int value, int base);
+void				ft_free(char **res, size_t i);
 
 #endif

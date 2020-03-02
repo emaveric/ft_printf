@@ -6,7 +6,7 @@
 #    By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/06 17:02:06 by emaveric          #+#    #+#              #
-#    Updated: 2020/02/28 21:34:18 by emaveric         ###   ########.fr        #
+#    Updated: 2020/03/02 16:51:13 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,29 +37,32 @@ OBJ = $(addprefix obj/, $(FILES:.c=.o))
 
 LIBFT = libft/libft.a
 
+LIBFT_DIR = libft/
+
 FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 lib:
-	@make -C libft
+	@make -C $(LIBFT_DIR)
 
 obj:
-	mkdir -p obj
+	mkdir -p obj/
 
 obj/%.o: src/%.c | obj
-	gcc -c $(FLAGS) -I $(INC) $< -o $@
+	gcc $(FLAGS) -I $(INC) -o $@ -c $<
 
 $(NAME): $(OBJ) lib
+	@cp $(LIBFT) $(NAME)
 	@ar rc $(NAME) $(OBJ)
 
 clean:
-	make -C libft fclean
+	make -C $(LIBFT_DIR) fclean
 	rm -rf $(OBJ)
 	rm -rf ./obj
 
 fclean: clean
-	make -C libft fclean
+	make -C $(LIBFT_DIR) fclean
 	/bin/rm -rf $(NAME)
 	rm -rf ./obj
 

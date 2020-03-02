@@ -6,7 +6,7 @@
 #    By: emaveric <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 19:36:08 by emaveric          #+#    #+#              #
-#    Updated: 2020/02/28 21:42:16 by emaveric         ###   ########.fr        #
+#    Updated: 2020/03/02 16:50:13 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,8 @@ SRC = ft_atoi.c ft_bzero.c ft_div_mod.c ft_is_whitespaces.c ft_isalnum.c \
 	  ft_numlen.c ft_num_to_str.c ulltoa_base.c ft_isnan.c number_len_ll.c \
 	  ft_isinf.c ft_lltoa.c ft_putnbr_max.c number_len_ull.c to_uppercase.c \
 	  ft_pow.c ft_ulltoa.c ft_is_minus_inf.c ft_pow_double.c ft_atoi_base.c \
+	  ft_clear_table.c ft_countwords.c ft_llutoa.c ft_strcmp_free.c \
+	  ft_strcut.c ft_strjoin_free.c ft_strncut.c itoa_base.c ft_free.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -38,7 +40,7 @@ FLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) -c $(HEAD) $(SRC)
+	gcc $(FLAGS) $(HEAD) -c $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 

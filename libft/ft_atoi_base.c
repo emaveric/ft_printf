@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tamarant <tamarant@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/25 20:32:01 by tamarant          #+#    #+#             */
-/*   Updated: 2019/12/16 14:37:51 by tamarant         ###   ########.fr       */
+/*   Created: 2020/01/15 16:00:48 by emaveric          #+#    #+#             */
+/*   Updated: 2020/02/02 11:00:48 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "libft.h"
 
