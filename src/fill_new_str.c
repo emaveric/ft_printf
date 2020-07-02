@@ -12,7 +12,7 @@
 
 #include "../includes/ft_printf.h"
 
-void	fill_str_buff(t_pf *pf, char **p)
+void	fillbuff(t_pf *pf, char **p)
 {
 	int i;
 	int len;
@@ -39,7 +39,7 @@ void	fill_str_buff(t_pf *pf, char **p)
 	pf->buf_len += pf->str_len;
 }
 
-void	fill_str_str(t_pf *pf, char **p)
+void	fill_string(t_pf *pf, char **p)
 {
 	int i;
 

@@ -13,29 +13,25 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# define BU_SIZE 60
+# define BF_SIZE 60
 
 # define RED "\x1B[31m"
-# define GRN "\x1b[32m"
-# define YEL "\x1b[33m"
-# define BLU "\x1b[34m"
-# define PPL "\x1b[35m"
-# define LBL "\x1b[36m"
-# define GRA "\x1b[37m"
-# define RST "\x1b[0m"
+# define GREEN "\x1b[32m"
+# define YELLOW "\x1b[33m"
+# define BLUE "\x1b[34m"
+# define PURPLE "\x1b[35m"
+# define LIGHT_BLUE "\x1b[36m"
+# define GRAY "\x1b[37m"
+# define RESET "\x1b[0m"
 
-# define BOLD "\x1b[1m"
-# define UNDER "\x1b[4m"
-# define INVERT "\x1b[7m"
-
-# define B_BLK "\x1b[40m"
+# define B_BLACK "\x1b[40m"
 # define B_RED "\x1b[41m"
-# define B_GRN "\x1b[42m"
-# define B_YEL "\x1b[43m"
-# define B_BLU "\x1b[44m"
-# define B_PPL "\x1b[45m"
-# define B_LBL "\x1B[46m"
-# define B_GRA "\x1B[47m"
+# define B_GREEN "\x1b[42m"
+# define B_YELLOW "\x1b[43m"
+# define B_BLUE "\x1b[44m"
+# define B_PURPLE "\x1b[45m"
+# define B_LIGHT_BLUE "\x1B[46m"
+# define B_GRAY "\x1B[47m"
 
 # include <stdio.h>
 # include <stdarg.h>
@@ -90,7 +86,7 @@ typedef struct			s_pf
 	union u_number		num;
 	int					dot;
 	int					float_dot;
-	char				buff[BU_SIZE];
+	char				buff[BF_SIZE];
 	int					buf_len;
 }						t_pf;
 
@@ -107,8 +103,8 @@ int						is_size(char *p);
 void					find_size(t_pf *pf, char **p);
 int						parse_format(t_pf *pf);
 int						find_str_size(t_pf *pf);
-void					fill_str_buff(t_pf *pf, char **p);
-void					fill_str_str(t_pf *pf, char **p);
+void					fillbuff(t_pf *pf, char **p);
+void					fill_string(t_pf *pf, char **p);
 void					check_buf(t_pf *pf, char **p);
 char					*find_tmp(t_pf *pf);
 int						fill_final(t_pf *pf, char *str, int n, int len);

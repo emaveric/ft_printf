@@ -12,22 +12,10 @@
 
 NAME = libftprintf.a
 
-FILES = check_is.c \
-		fill_final.c \
-		find_mod.c \
-		find_str_size.c \
-		float_maker.c \
-		float_new_free.c \
-		float_put.c \
-		floats.c \
-		ft_printf.c \
-		fill_new_str.c \
-		fill_find_other.c \
-		parse_format.c \
-		pf_format.c \
-		pf_free.c \
-		pf_libft.c \
-		print_check.c \
+FILES = check_is.c fill_final.c fill_find_other.c fill_new_str.c \
+        find_mod.c find_str_size.c float_maker.c float_new_free.c \
+        float_put.c floats.c ft_printf.c parse_format.c pf_format.c \
+        pf_free.c pf_libft.c print_check.c
 
 SRC = $(addprefix src/, $(FILES))
 

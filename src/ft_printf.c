@@ -92,11 +92,3 @@ int		ft_printf(const char *format, ...)
 	va_end(ap);
 	return (sum);
 }
-
-/*int 	main(void)
-{
-	ft_printf("%10.s\"", NULL);
-	printf("\n");
-	printf("%10.s\"", NULL);
-	return (0);
-}*/

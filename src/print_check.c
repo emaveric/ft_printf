@@ -21,8 +21,8 @@ void			print_res(char *str, int len, int n)
 static void		fill_buf(t_pf *pf, char **p)
 {
 	(pf->type) ? fill_final(pf, pf->buff, 1, pf->buf_len)
-				: fill_str_buff(pf, &*p);
-	if (pf->str_len + pf->buf_len == BU_SIZE - 1)
+				: fillbuff(pf, &*p);
+	if (pf->str_len + pf->buf_len == BF_SIZE - 1)
 	{
 		print_res(pf->buff, pf->buf_len, 2);
 		pf->buf_len = 0;
@@ -31,21 +31,21 @@ static void		fill_buf(t_pf *pf, char **p)
 
 void			check_buf(t_pf *pf, char **p)
 {
-	if (pf->str_len + pf->buf_len < BU_SIZE)
+	if (pf->str_len + pf->buf_len < BF_SIZE)
 		fill_buf(pf, p);
-	else if (pf->str_len + pf->buf_len >= BU_SIZE)
+	else if (pf->str_len + pf->buf_len >= BF_SIZE)
 	{
 		if (pf->buf_len > 0)
 		{
 			print_res(pf->buff, pf->buf_len, 2);
 			pf->buf_len = 0;
 			(pf->type) ? fill_final(pf, pf->buff, 1, pf->buf_len)
-						: fill_str_buff(pf, &*p);
+						: fillbuff(pf, &*p);
 		}
 		else
 		{
 			(pf->type) ? fill_final(pf, pf->str, 2, pf->str_len)
-						: fill_str_str(pf, &*p);
+						: fill_string(pf, &*p);
 			print_res(pf->str, pf->str_len, 1);
 		}
 	}
